@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-flame: #BC552A;
+  --color-khaki: #BEB9A9;
+  --color-butterscotch: #DD9047;
+  --color-bistre: #472D1F;
+  --color-caput-mortuum: #602314;
+  --color-vanilla: #FFEFB5;
+  --font-family-serif: 'Cinzel', serif;
+  --font-family-sans: 'Inter', sans-serif;
+}
+
+* {
+  font-family: var(--font-family-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-vanilla);
+}
+
+.font-serif {
+  font-family: var(--font-family-serif);
+}
+
+/* Watercolor effect backgrounds - Caput Mortuum & Flame primary */
+.watercolor-bg {
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(96, 35, 20, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(188, 85, 42, 0.18) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 80%, rgba(96, 35, 20, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 70%, rgba(188, 85, 42, 0.1) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(255, 239, 181, 0.9) 0%, rgba(255, 239, 181, 1) 100%);
+}
+
+.watercolor-section {
+  background: 
+    radial-gradient(ellipse at 0% 50%, rgba(96, 35, 20, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 50%, rgba(188, 85, 42, 0.12) 0%, transparent 50%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-vanilla);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-caput-mortuum);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-flame);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 239, 181, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
